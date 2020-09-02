@@ -1,4 +1,4 @@
-module module2
+module github.com/mykhailovozniak/module2
 
 go 1.23
 

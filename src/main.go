@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/joho/godotenv"
+	"github.com/mykhailovozniak/module2/src/html"
 	"log"
-	"module2/src/html"
 	"net/http"
 	"os"
 )
@@ -20,16 +20,17 @@ func hello(res http.ResponseWriter, req *http.Request)  {
 }
 
 func learningMaterials(res http.ResponseWriter, req *http.Request)  {
-	var list = [6]string{
+	var list = []string{
 		"http package",
 		"Writing Web Applications",
 		"Go by Example: HTTP Servers",
 		"Hello world HTTP server example",
 		"How I write Go HTTP services after seven years",
 		"Gorilla web toolkit",
+		"One new Module for testing",
 	}
 
-	var ulElem = html.RenderUL(list[:])
+	var ulElem = html.RenderUL(list)
 	var document = html.RenderHTML5(ulElem)
 
 	_, err := fmt.Fprintf(res, document)
